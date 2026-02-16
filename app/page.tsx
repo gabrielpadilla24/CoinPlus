@@ -63,15 +63,17 @@ const page = async () => {
         <div id="coin-overview">
           <div className="header pt-2">
             <Image
-              src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png"
-              alt="Bitcoin"
+              src={coin.image.large}
+              alt={coin.name}
               width={56}
               height={56}
             />
 
             <div className="info">
-              <p>Bitcoin / BTC</p>
-              <h1>$67,000</h1>
+              <p>
+                {coin.name} / {coin.symbol.toUpperCase()}
+              </p>
+              <h1>${coin.market_data.current_price.usd.toLocaleString()} </h1>
             </div>
           </div>
         </div>
