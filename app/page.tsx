@@ -40,6 +40,7 @@ const columns: DataTableColumn<TrendingCoin>[] = [
             ) : (
               <TrendingDown width={16} height={16} />
             )}
+            {Math.abs(item.data.price_change_percentage_24h.usd).toFixed(2)}%
           </p>
         </div>
       );
