@@ -4,6 +4,7 @@ import DataTable from "@/components/DataTable";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { TrendingDown, TrendingUp } from "lucide-react";
+import { fetcher } from "@/lib/coingecko.actions";
 
 const columns: DataTableColumn<TrendingCoin>[] = [
   {
@@ -54,7 +55,8 @@ const columns: DataTableColumn<TrendingCoin>[] = [
   },
 ];
 
-const page = () => {
+const page = async () => {
+  const coin = await fetcher<CoinDetailsData>("/coins/bitcoin");
   return (
     <main className="main-container">
       <section className="home-grid">
