@@ -45,6 +45,12 @@ const columns: DataTableColumn<TrendingCoin>[] = [
       );
     },
   },
+
+  {
+    header: "Price",
+    cellClassName: "price-cell",
+    cell: (coin) => `$${coin.item.data.price}`,
+  },
 ];
 
 const page = () => {
