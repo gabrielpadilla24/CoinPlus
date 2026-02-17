@@ -58,7 +58,10 @@ const TrendingCoins = async () => {
     {
       header: "Price",
       cellClassName: "price-cell",
-      cell: (coin) => `$${coin.item.data.price}`,
+      cell: (coin) => {
+        const price = coin.item.data.price;
+        return `$${typeof price === "number" ? price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : price}`;
+      },
     },
   ];
 

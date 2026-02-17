@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 
 const page = async () => {
   return (
-    <main>
+    <main className="main-container">
       <section className="home-grid">
         <Suspense fallback={<div>Loading Overview...</div>}>
           <CoinOverview />
