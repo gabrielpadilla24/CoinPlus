@@ -19,7 +19,7 @@ const CoinOverview = async () => {
     ]);
     return (
       <div id="coin-overview">
-        {/* <CandlestickChart data={coinOHLCData} coinId="bitcoin">
+        <CandlestickChart data={coinOHLCData} coinId="bitcoin">
           <div className="header pt-2">
             <Image
               src={coin.image.large}
@@ -35,7 +35,7 @@ const CoinOverview = async () => {
               <h1>${coin.market_data.current_price.usd.toLocaleString()} </h1>
             </div>
           </div>
-        </CandlestickChart> */}
+        </CandlestickChart>
       </div>
     );
   } catch (error) {

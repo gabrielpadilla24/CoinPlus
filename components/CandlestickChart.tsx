@@ -1,3 +1,5 @@
+"use client";
+
 import { PERIOD_BUTTONS } from "@/constants";
 import { useState } from "react";
 
@@ -11,8 +13,9 @@ const CandlestickChart = ({
   const [loading, setLoading] = useState(false);
   const [period, setPeriod] = useState(initialPeriod);
   const handlePeriodChange = (newPeriod: Period) => {
-    if (newPeriod === initialPeriod) return;
+    if (newPeriod === period) return;
     //TODO UPDATE PERIOD
+    setPeriod(newPeriod);
   };
 
   return (
@@ -27,21 +30,15 @@ const CandlestickChart = ({
           {PERIOD_BUTTONS.map(({ value, label }) => (
             <button
               key={value}
-              className="config-button"
-              onClick={() => {}}
+              className={
+                period === value ? "config-button-active" : "config-button"
+              }
+              onClick={() => handlePeriodChange(value)}
               disabled={loading}
             >
               {label}
             </button>
           ))}
-          <button
-            key="1h"
-            className="config-button"
-            onClick={() => {}}
-            disabled={loading}
-          >
-            1 hour
-          </button>
         </div>
       </div>
     </div>
